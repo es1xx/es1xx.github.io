@@ -1,0 +1,128 @@
+{
+  "menu": [
+    {
+      "name": "americano",
+      "url": "https://images.unsplash.com/photo-1718808713242-ce2f191d81ad",
+      "page": "https://unsplash.com/photos/a-cup-of-coffee-sitting-on-top-of-a-saucer-1vBFkgwjQtg"
+    },
+    {
+      "name": "flat-white",
+      "url": "https://images.unsplash.com/photo-1616261388936-d3f291bac68c",
+      "page": "https://unsplash.com/photos/white-ceramic-mug-with-brown-liquid-OgGVvVKfWPk"
+    },
+    {
+      "name": "filter-coffee",
+      "url": "https://images.unsplash.com/photo-1780341219526-a1b2ff5bbfda",
+      "page": "https://unsplash.com/photos/pour-over-coffee-brewing-on-a-digital-scale-lqb6W5RHgyU"
+    },
+    {
+      "name": "big-breakfast",
+      "url": "https://images.unsplash.com/photo-1655979282314-eb45a7d69959",
+      "page": "https://unsplash.com/photos/a-plate-of-food-_Tci2omfmHI"
+    },
+    {
+      "name": "avocado-toast",
+      "url": "https://images.unsplash.com/photo-1761027101403-862b44000b4c",
+      "page": "https://unsplash.com/photos/avocado-toast-with-poached-eggs-and-chili-zB6hGZV0ZIk"
+    },
+    {
+      "name": "syrniki",
+      "url": "https://images.unsplash.com/photo-1682219179121-36821753748d",
+      "page": "https://unsplash.com/photos/a-white-plate-topped-with-pancakes-and-berries-WXNfNUFSeSU"
+    },
+    {
+      "name": "omelette",
+      "url": "https://images.unsplash.com/photo-1510693206972-df098062cb71",
+      "page": "https://unsplash.com/photos/omelette-on-black-plate-6rtm6a_aVyE"
+    },
+    {
+      "name": "chocolate-tart",
+      "url": "https://images.unsplash.com/photo-1546549158-993c3d92d592",
+      "page": "https://unsplash.com/photos/flat-lay-photograph-of-pie-tray-cherries-and-powder-yCKZFRcX5W4"
+    },
+    {
+      "name": "cheesecake",
+      "url": "https://images.unsplash.com/photo-1578775887804-699de7086ff9",
+      "page": "https://unsplash.com/photos/cheesecake-with-pink-toppings-FDYbS43jUrU"
+    },
+    {
+      "name": "almond-croissant",
+      "url": "https://images.unsplash.com/photo-1769437626773-4b2c1ac0cf6c",
+      "page": "https://unsplash.com/photos/a-croissant-with-icing-sits-on-a-tray-AidLjZx4rs4"
+    },
+    {
+      "name": "macarons",
+      "url": "https://images.unsplash.com/photo-1612198791362-c996ceb686b1",
+      "page": "https://unsplash.com/photos/pink-and-white-macaroons-on-white-ceramic-bowl-Sdek8sp0vGE"
+    },
+    {
+      "name": "apple-pie",
+      "url": "https://images.unsplash.com/photo-1633285708779-c62ea47708b9",
+      "page": "https://unsplash.com/photos/a-slice-of-apple-pie-on-a-plate-next-to-a-cup-of-coffee-a1f1LuWuFkE"
+    },
+    {
+      "name": "mushroom-pasta",
+      "url": "https://images.unsplash.com/photo-1689793607035-1a25fb32a510",
+      "page": "https://unsplash.com/photos/a-plate-of-pasta-with-mushrooms-and-spinach-kX84LltzAao"
+    },
+    {
+      "name": "grilled-salmon",
+      "url": "https://images.unsplash.com/photo-1565569753751-60367244ed5a",
+      "page": "https://unsplash.com/photos/fish-meat-and-vegetable-salad-DRl7wjTlLk0"
+    },
+    {
+      "name": "espresso",
+      "url": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd"
+    },
+    {
+      "name": "cappuccino",
+      "url": "https://images.unsplash.com/photo-1509042239860-f550ce710b93"
+    }
+  ],
+  "gallery": [
+    {
+      "name": "conversation",
+      "page": "https://unsplash.com/photos/friends-are-chatting-and-having-coffee-at-a-cafe-rioA77g2-XU",
+      "url": "https://images.unsplash.com/photo-1753351055246-a7efae066eef"
+    },
+    {
+      "name": "bakery",
+      "page": "https://unsplash.com/photos/a-display-case-filled-with-lots-of-different-types-of-pastries-dr-eKWMgOII",
+      "url": "https://images.unsplash.com/photo-1724879703317-a2686a97f767"
+    },
+    {
+      "name": "terrace",
+      "page": "https://unsplash.com/photos/quaint-stone-cafe-with-outdoor-seating-and-upstairs-balconies-89BpD1VAPXQ",
+      "url": "https://images.unsplash.com/photo-1780299283073-b1dfa2d5a7fb"
+    },
+    {
+      "name": "barista",
+      "page": "https://unsplash.com/photos/person-pouring-milk-in-coffe--Rwjvuz6pXA",
+      "url": "https://images.unsplash.com/photo-1516371722954-1e17330ef40b"
+    },
+    {
+      "name": "coffee-moment",
+      "url": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085"
+    },
+    {
+      "name": "interior",
+      "url": "https://images.unsplash.com/photo-1453614512568-c4024d13c247"
+    }
+  ],
+  "illustrations": [
+    "raf-coffee",
+    "banana-oatmeal",
+    "pumpkin-risotto",
+    "sous-vide-chicken",
+    "beet-salad"
+  ],
+  "note": "Фото однієї страви навмисно спільне для двох версій меню. Решта фото різні; ілюстрації створено спеціально для демо.",
+  "hero": {
+    "url": "https://images.unsplash.com/photo-1525351484163-7529414344d8",
+    "file": "hero.webp"
+  },
+  "openGraph": {
+    "file": "og-lume.webp",
+    "type": "Окрема типографічна композиція без фото"
+  }
+}

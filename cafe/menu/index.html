@@ -3,286 +3,1186 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Меню Lume — кава, сніданки, десерти та вечері</title>
+    <title>Меню Lume — кава, сніданки, десерти й вечері | Демо</title>
     <meta
       name="description"
-      content="Мобільне демо-меню Lume з цінами, категоріями та пошуком."
+      content="Повне демо-меню Lume: 21 страва й напій, фото, ціни та фільтри за позначками."
     />
     <meta name="theme-color" content="#f4ede1" />
     <link rel="canonical" href="https://es1xx.github.io/cafe/menu/" />
-    <meta property="og:url" content="https://es1xx.github.io/cafe/menu/" />
-    <meta property="og:site_name" content="Lume · Демо від Es1xx" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="uk_UA" />
+    <meta property="og:site_name" content="Lume · Демо від Es1xx" />
     <meta
       property="og:title"
-      content="Меню Lume — кава, сніданки, десерти та вечері"
+      content="Меню Lume — кава, сніданки, десерти й вечері | Демо"
     />
     <meta
       property="og:description"
-      content="Мобільне демо-меню Lume з цінами, категоріями та пошуком."
+      content="Повне демо-меню Lume: 21 страва й напій, фото, ціни та фільтри за позначками."
     />
+    <meta property="og:url" content="https://es1xx.github.io/cafe/menu/" />
     <meta
       property="og:image"
-      content="https://es1xx.github.io/assets/og-es1xx.webp"
+      content="https://es1xx.github.io/assets/cafe/og-lume.webp"
     />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <link rel="icon" href="../../assets/lume-icon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="../../assets/foundation.css" />
-    <link rel="stylesheet" href="../../assets/lume.css" />
-    <script src="../../assets/demo.js" defer></script>
+    <link
+      rel="preload"
+      as="font"
+      href="../../assets/fonts/cormorant-garamond-cyrillic-wght-normal.woff2"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="stylesheet" href="../../assets/lume.min.css" />
+    <script src="../../assets/lume.js" defer></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "CafeOrCoffeeShop",
+        "name": "Lume — демонстраційний приклад",
+        "description": "Вигаданий заклад. Демо-концепт від Es1xx. Контакти й адреса — плейсхолдери.",
+        "url": "https://es1xx.github.io/cafe/",
+        "image": "https://es1xx.github.io/assets/cafe/og-lume.webp",
+        "telephone": "+380000000000",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Демонстраційна адреса — не реальний заклад",
+          "addressLocality": "Черкаси",
+          "addressCountry": "UA"
+        },
+        "servesCuisine": ["Кава", "Сніданки", "Європейська кухня"],
+        "priceRange": "₴",
+        "hasMenu": "https://es1xx.github.io/cafe/menu/",
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
+              "Saturday",
+              "Sunday"
+            ],
+            "opens": "08:00",
+            "closes": "22:00"
+          }
+        ]
+      }
+    </script>
   </head>
-  <body class="lume">
+  <body class="lume qr-page">
     <a class="skip" href="#main">До вмісту</a>
-    <header class="qr-head">
-      <a class="brand" href="../">Lume</a><a href="../">До кавʼярні ↗</a>
+    <header class="qr-mast wrap">
+      <a class="wordmark" href="../">Lume<span>.</span></a
+      ><a class="back-link" href="../"
+        >Назад на сайт <span aria-hidden="true">↗</span></a
+      >
     </header>
-    <main id="main" class="qr-main">
-      <p class="eyebrow">На що сьогодні ваш настрій?</p>
-      <h1>Меню <em>Lume.</em></h1>
-      <label class="search-label"
-        >Знайти щось смачне<input
-          type="search"
-          id="menu-search"
-          placeholder="Назва страви або інгредієнт"
-      /></label>
-      <div class="menu-tabs" role="tablist" aria-label="Категорії меню">
-        <button
-          role="tab"
-          id="tab-0"
-          aria-selected="true"
-          aria-controls="panel-0"
-          tabindex="0"
-          data-category="Кава"
+    <main id="main">
+      <section class="menu-section" id="menu" aria-labelledby="menu-title">
+        <div class="menu-intro wrap">
+          <p class="eyebrow">Маленькі задоволення щодня</p>
+          <h1 id="menu-title">Меню <em>Lume.</em></h1>
+          <p>Кава на початок. Щось смачне — на продовження.</p>
+        </div>
+        <h2 class="sr-only">Страви та напої за категоріями</h2>
+        <div class="category-sticky">
+          <nav class="category-nav wrap" aria-label="Категорії меню">
+            <a
+              href="#coffee"
+              data-category-link="coffee"
+              aria-current="location"
+              >Кава<span class="category-count" aria-hidden="true">06</span></a
+            ><a href="#breakfast" data-category-link="breakfast"
+              >Сніданки<span class="category-count" aria-hidden="true"
+                >05</span
+              ></a
+            ><a href="#desserts" data-category-link="desserts"
+              >Десерти<span class="category-count" aria-hidden="true"
+                >05</span
+              ></a
+            ><a href="#dinner" data-category-link="dinner"
+              >Вечеря<span class="category-count" aria-hidden="true"
+                >05</span
+              ></a
+            >
+          </nav>
+        </div>
+        <div
+          class="filters wrap"
+          role="group"
+          aria-label="Фільтрувати страви за позначками"
         >
-          Кава</button
-        ><button
-          role="tab"
-          id="tab-1"
-          aria-selected="false"
-          aria-controls="panel-1"
-          tabindex="-1"
-          data-category="Сніданки"
+          <span>Показати:</span
+          ><button type="button" data-filter="all" aria-pressed="true">
+            Усе</button
+          ><button type="button" data-filter="веган" aria-pressed="false">
+            Веган</button
+          ><button type="button" data-filter="без глютену" aria-pressed="false">
+            Без глютену
+          </button>
+          <p class="filter-status sr-only" role="status" aria-live="polite"></p>
+        </div>
+        <div class="menu-categories wrap">
+          <section
+            id="coffee"
+            class="menu-category"
+            aria-labelledby="coffee-title"
+            data-menu-category="coffee"
+          >
+            <header class="category-heading">
+              <span class="category-index">/ 01</span>
+              <h3 id="coffee-title">Кава</h3>
+              <p>Зерно, вода й маленький ранковий ритуал.</p>
+            </header>
+            <ul class="dish-list">
+              <li
+                class="dish"
+                data-dish="espresso"
+                data-tags="веган|без глютену"
+              >
+                <article>
+                  <div class="dish-copy">
+                    <div class="dish-heading">
+                      <h4 id="dish-espresso">Еспресо</h4>
+                      <span class="dish-price">55 ₴</span>
+                    </div>
+                    <p class="dish-description">
+                      Насичений, з карамельним післясмаком.
+                    </p>
+                    <div class="dish-meta">
+                      <span class="dish-weight">30 мл</span>
+                      <div class="dish-tags">
+                        <span>веган</span><span>без глютену</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="dish-image blur-up">
+                    <img
+                      class=""
+                      src="../../assets/cafe/menu/espresso.webp"
+                      alt="Чашка насиченого еспресо з крема"
+                      width="400"
+                      height="600"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                  <button
+                    type="button"
+                    class="dish-open"
+                    aria-label="Докладніше: Еспресо, 55 ₴"
+                    aria-haspopup="dialog"
+                    data-title="Еспресо"
+                    data-description="Насичений, з карамельним післясмаком."
+                    data-ingredients="Свіжообсмажена кава, вода."
+                    data-weight="30 мл"
+                    data-price="55 ₴"
+                    data-illustration="false"
+                  >
+                    <span class="sr-only">Відкрити опис страви</span>
+                  </button>
+                </article>
+              </li>
+              <li
+                class="dish"
+                data-dish="americano"
+                data-tags="веган|без глютену"
+              >
+                <article>
+                  <div class="dish-copy">
+                    <div class="dish-heading">
+                      <h4 id="dish-americano">Американо</h4>
+                      <span class="dish-price">65 ₴</span>
+                    </div>
+                    <p class="dish-description">
+                      Чистий, мʼякий, на свіжообсмажених зернах.
+                    </p>
+                    <div class="dish-meta">
+                      <span class="dish-weight">200 мл</span>
+                      <div class="dish-tags">
+                        <span>веган</span><span>без глютену</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="dish-image blur-up">
+                    <img
+                      class=""
+                      src="../../assets/cafe/menu/americano.webp"
+                      alt="Гарячий американо у чашці на блюдці"
+                      width="600"
+                      height="400"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                  <button
+                    type="button"
+                    class="dish-open"
+                    aria-label="Докладніше: Американо, 65 ₴"
+                    aria-haspopup="dialog"
+                    data-title="Американо"
+                    data-description="Чистий, мʼякий, на свіжообсмажених зернах."
+                    data-ingredients="Подвійний еспресо, гаряча вода."
+                    data-weight="200 мл"
+                    data-price="65 ₴"
+                    data-illustration="false"
+                  >
+                    <span class="sr-only">Відкрити опис страви</span>
+                  </button>
+                </article>
+              </li>
+              <li
+                class="dish"
+                data-dish="cappuccino"
+                data-tags="хіт|без глютену"
+              >
+                <article>
+                  <div class="dish-copy">
+                    <div class="dish-heading">
+                      <h4 id="dish-cappuccino">Капучино</h4>
+                      <span class="dish-price">85 ₴</span>
+                    </div>
+                    <p class="dish-description">
+                      Оксамитова молочна піна і шоколадна нотка.
+                    </p>
+                    <div class="dish-meta">
+                      <span class="dish-weight">200 мл</span>
+                      <div class="dish-tags">
+                        <span>хіт</span><span>без глютену</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="dish-image blur-up">
+                    <img
+                      class=""
+                      src="../../assets/cafe/menu/cappuccino.webp"
+                      alt="Капучино з ніжною молочною піною"
+                      width="400"
+                      height="600"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                  <button
+                    type="button"
+                    class="dish-open"
+                    aria-label="Докладніше: Капучино, 85 ₴"
+                    aria-haspopup="dialog"
+                    data-title="Капучино"
+                    data-description="Оксамитова молочна піна і шоколадна нотка."
+                    data-ingredients="Еспресо, молоко. Містить молочні продукти."
+                    data-weight="200 мл"
+                    data-price="85 ₴"
+                    data-illustration="false"
+                  >
+                    <span class="sr-only">Відкрити опис страви</span>
+                  </button>
+                </article>
+              </li>
+              <li class="dish" data-dish="flat-white" data-tags="без глютену">
+                <article>
+                  <div class="dish-copy">
+                    <div class="dish-heading">
+                      <h4 id="dish-flat-white">Флет вайт</h4>
+                      <span class="dish-price">95 ₴</span>
+                    </div>
+                    <p class="dish-description">
+                      Подвійний еспресо з шовковистим молоком.
+                    </p>
+                    <div class="dish-meta">
+                      <span class="dish-weight">160 мл</span>
+                      <div class="dish-tags"><span>без глютену</span></div>
+                    </div>
+                  </div>
+                  <div class="dish-image blur-up">
+                    <img
+                      class=""
+                      src="../../assets/cafe/menu/flat-white.webp"
+                      alt="Флет вайт з тонким шаром молочної піни"
+                      width="337"
+                      height="600"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                  <button
+                    type="button"
+                    class="dish-open"
+                    aria-label="Докладніше: Флет вайт, 95 ₴"
+                    aria-haspopup="dialog"
+                    data-title="Флет вайт"
+                    data-description="Подвійний еспресо з шовковистим молоком."
+                    data-ingredients="Подвійний еспресо, молоко. Містить молочні продукти."
+                    data-weight="160 мл"
+                    data-price="95 ₴"
+                    data-illustration="false"
+                  >
+                    <span class="sr-only">Відкрити опис страви</span>
+                  </button>
+                </article>
+              </li>
+              <li
+                class="dish"
+                data-dish="filter-coffee"
+                data-tags="веган|без глютену"
+              >
+                <article>
+                  <div class="dish-copy">
+                    <div class="dish-heading">
+                      <h4 id="dish-filter-coffee">Фільтр-кава</h4>
+                      <span class="dish-price">75 ₴</span>
+                    </div>
+                    <p class="dish-description">
+                      Яскрава, ягідна, на повільному заварюванні.
+                    </p>
+                    <div class="dish-meta">
+                      <span class="dish-weight">250 мл</span>
+                      <div class="dish-tags">
+                        <span>веган</span><span>без глютену</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="dish-image blur-up">
+                    <img
+                      class=""
+                      src="../../assets/cafe/menu/filter-coffee.webp"
+                      alt="Ручне приготування фільтр-кави через пуровер"
+                      width="450"
+                      height="600"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                  <button
+                    type="button"
+                    class="dish-open"
+                    aria-label="Докладніше: Фільтр-кава, 75 ₴"
+                    aria-haspopup="dialog"
+                    data-title="Фільтр-кава"
+                    data-description="Яскрава, ягідна, на повільному заварюванні."
+                    data-ingredients="Кава світлого обсмаження, вода, паперовий фільтр."
+                    data-weight="250 мл"
+                    data-price="75 ₴"
+                    data-illustration="false"
+                  >
+                    <span class="sr-only">Відкрити опис страви</span>
+                  </button>
+                </article>
+              </li>
+              <li class="dish" data-dish="raf-coffee" data-tags="без глютену">
+                <article>
+                  <div class="dish-copy">
+                    <div class="dish-heading">
+                      <h4 id="dish-raf-coffee">Раф</h4>
+                      <span class="dish-price">105 ₴</span>
+                    </div>
+                    <p class="dish-description">Вершковий, з ваніллю.</p>
+                    <div class="dish-meta">
+                      <span class="dish-weight">250 мл</span>
+                      <div class="dish-tags"><span>без глютену</span></div>
+                    </div>
+                  </div>
+                  <div class="dish-image blur-up">
+                    <img
+                      class=""
+                      src="../../assets/cafe/menu/raf-coffee.webp"
+                      alt="Editorial-ілюстрація вершкового рафу з ваніллю"
+                      width="600"
+                      height="600"
+                      loading="lazy"
+                      decoding="async"
+                    /><span class="illustration-label">Ілюстрація</span>
+                  </div>
+                  <button
+                    type="button"
+                    class="dish-open"
+                    aria-label="Докладніше: Раф, 105 ₴"
+                    aria-haspopup="dialog"
+                    data-title="Раф"
+                    data-description="Вершковий, з ваніллю."
+                    data-ingredients="Еспресо, вершки, ванільний цукор. Містить молочні продукти."
+                    data-weight="250 мл"
+                    data-price="105 ₴"
+                    data-illustration="true"
+                  >
+                    <span class="sr-only">Відкрити опис страви</span>
+                  </button>
+                </article>
+              </li>
+            </ul>
+          </section>
+          <section
+            id="breakfast"
+            class="menu-category"
+            aria-labelledby="breakfast-title"
+            data-menu-category="breakfast"
+          >
+            <header class="category-heading">
+              <span class="category-index">/ 02</span>
+              <h3 id="breakfast-title">Сніданки</h3>
+              <p>Щодня до 15:00. Для ранків без поспіху.</p>
+            </header>
+            <ul class="dish-list">
+              <li class="dish" data-dish="big-breakfast" data-tags="хіт">
+                <article>
+                  <div class="dish-copy">
+                    <div class="dish-heading">
+                      <h4 id="dish-big-breakfast">Великий сніданок</h4>
+                      <span class="dish-price">245 ₴</span>
+                    </div>
+                    <p class="dish-description">
+                      Яйця на вибір, хрусткий бекон, тост, авокадо, свіжі овочі.
+                    </p>
+                    <div class="dish-meta">
+                      <span class="dish-weight">360 г</span>
+                      <div class="dish-tags"><span>хіт</span></div>
+                    </div>
+                  </div>
+                  <div class="dish-image blur-up">
+                    <img
+                      class=""
+                      src="../../assets/cafe/menu/big-breakfast.webp"
+                      alt="Великий сніданок з яйцями, беконом і овочами на тарілці"
+                      width="600"
+                      height="400"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                  <button
+                    type="button"
+                    class="dish-open"
+                    aria-label="Докладніше: Великий сніданок, 245 ₴"
+                    aria-haspopup="dialog"
+                    data-title="Великий сніданок"
+                    data-description="Яйця на вибір, хрусткий бекон, тост, авокадо, свіжі овочі."
+                    data-ingredients="Яйця, бекон, зерновий хліб, авокадо, помідори, огірок, зелень. Містить яйця та глютен."
+                    data-weight="360 г"
+                    data-price="245 ₴"
+                    data-illustration="false"
+                  >
+                    <span class="sr-only">Відкрити опис страви</span>
+                  </button>
+                </article>
+              </li>
+              <li class="dish" data-dish="avocado-toast" data-tags="хіт">
+                <article>
+                  <div class="dish-copy">
+                    <div class="dish-heading">
+                      <h4 id="dish-avocado-toast">
+                        Тост з авокадо та яйцем-пашот
+                      </h4>
+                      <span class="dish-price">185 ₴</span>
+                    </div>
+                    <p class="dish-description">
+                      Зерновий хліб, лайм, мікс салатів.
+                    </p>
+                    <div class="dish-meta">
+                      <span class="dish-weight">220 г</span>
+                      <div class="dish-tags"><span>хіт</span></div>
+                    </div>
+                  </div>
+                  <div class="dish-image blur-up">
+                    <img
+                      class=""
+                      src="../../assets/cafe/menu/avocado-toast.webp"
+                      alt="Тост з авокадо, яйцем-пашот і зеленню"
+                      width="401"
+                      height="600"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                  <button
+                    type="button"
+                    class="dish-open"
+                    aria-label="Докладніше: Тост з авокадо та яйцем-пашот, 185 ₴"
+                    aria-haspopup="dialog"
+                    data-title="Тост з авокадо та яйцем-пашот"
+                    data-description="Зерновий хліб, лайм, мікс салатів."
+                    data-ingredients="Зерновий хліб, авокадо, яйце-пашот, сік лайма, салатне листя. Містить яйця та глютен."
+                    data-weight="220 г"
+                    data-price="185 ₴"
+                    data-illustration="false"
+                  >
+                    <span class="sr-only">Відкрити опис страви</span>
+                  </button>
+                </article>
+              </li>
+              <li class="dish" data-dish="syrniki" data-tags="хіт">
+                <article>
+                  <div class="dish-copy">
+                    <div class="dish-heading">
+                      <h4 id="dish-syrniki">Сирники зі сметаною та ягодами</h4>
+                      <span class="dish-price">155 ₴</span>
+                    </div>
+                    <p class="dish-description">
+                      Ніжні, зі сметаною та сезонними ягодами.
+                    </p>
+                    <div class="dish-meta">
+                      <span class="dish-weight">220 г</span>
+                      <div class="dish-tags"><span>хіт</span></div>
+                    </div>
+                  </div>
+                  <div class="dish-image blur-up">
+                    <img
+                      class=""
+                      src="../../assets/cafe/menu/syrniki.webp"
+                      alt="Золотаві сирники зі сметаною та свіжими ягодами"
+                      width="451"
+                      height="600"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                  <button
+                    type="button"
+                    class="dish-open"
+                    aria-label="Докладніше: Сирники зі сметаною та ягодами, 155 ₴"
+                    aria-haspopup="dialog"
+                    data-title="Сирники зі сметаною та ягодами"
+                    data-description="Ніжні, зі сметаною та сезонними ягодами."
+                    data-ingredients="Кисломолочний сир, яйце, пшеничне борошно, сметана, сезонні ягоди. Містить молочні продукти, яйця та глютен."
+                    data-weight="220 г"
+                    data-price="155 ₴"
+                    data-illustration="false"
+                  >
+                    <span class="sr-only">Відкрити опис страви</span>
+                  </button>
+                </article>
+              </li>
+              <li class="dish" data-dish="banana-oatmeal" data-tags="">
+                <article>
+                  <div class="dish-copy">
+                    <div class="dish-heading">
+                      <h4 id="dish-banana-oatmeal">
+                        Вівсянка з карамелізованим бананом
+                      </h4>
+                      <span class="dish-price">125 ₴</span>
+                    </div>
+                    <p class="dish-description">
+                      Вершкова, з горіхами та ноткою мʼяти.
+                    </p>
+                    <div class="dish-meta">
+                      <span class="dish-weight">250 г</span>
+                      <div class="dish-tags"></div>
+                    </div>
+                  </div>
+                  <div class="dish-image blur-up">
+                    <img
+                      class=""
+                      src="../../assets/cafe/menu/banana-oatmeal.webp"
+                      alt="Editorial-ілюстрація вівсянки з карамелізованим бананом і горіхами"
+                      width="600"
+                      height="600"
+                      loading="lazy"
+                      decoding="async"
+                    /><span class="illustration-label">Ілюстрація</span>
+                  </div>
+                  <button
+                    type="button"
+                    class="dish-open"
+                    aria-label="Докладніше: Вівсянка з карамелізованим бананом, 125 ₴"
+                    aria-haspopup="dialog"
+                    data-title="Вівсянка з карамелізованим бананом"
+                    data-description="Вершкова, з горіхами та ноткою мʼяти."
+                    data-ingredients="Вівсяні пластівці, молоко, банан, вершкове масло, тростинний цукор, волоські горіхи, мʼята. Містить молочні продукти, глютен та горіхи."
+                    data-weight="250 г"
+                    data-price="125 ₴"
+                    data-illustration="true"
+                  >
+                    <span class="sr-only">Відкрити опис страви</span>
+                  </button>
+                </article>
+              </li>
+              <li class="dish" data-dish="omelette" data-tags="без глютену">
+                <article>
+                  <div class="dish-copy">
+                    <div class="dish-heading">
+                      <h4 id="dish-omelette">Омлет з овочами та сиром</h4>
+                      <span class="dish-price">145 ₴</span>
+                    </div>
+                    <p class="dish-description">
+                      Пухкий, з томатами, перцем і зеленню.
+                    </p>
+                    <div class="dish-meta">
+                      <span class="dish-weight">240 г</span>
+                      <div class="dish-tags"><span>без глютену</span></div>
+                    </div>
+                  </div>
+                  <div class="dish-image blur-up">
+                    <img
+                      class=""
+                      src="../../assets/cafe/menu/omelette.webp"
+                      alt="Омлет з овочами, сиром і зеленню на тарілці"
+                      width="600"
+                      height="499"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                  <button
+                    type="button"
+                    class="dish-open"
+                    aria-label="Докладніше: Омлет з овочами та сиром, 145 ₴"
+                    aria-haspopup="dialog"
+                    data-title="Омлет з овочами та сиром"
+                    data-description="Пухкий, з томатами, перцем і зеленню."
+                    data-ingredients="Яйця, молоко, сир, томати, солодкий перець, зелень. Містить яйця та молочні продукти."
+                    data-weight="240 г"
+                    data-price="145 ₴"
+                    data-illustration="false"
+                  >
+                    <span class="sr-only">Відкрити опис страви</span>
+                  </button>
+                </article>
+              </li>
+            </ul>
+          </section>
+          <section
+            id="desserts"
+            class="menu-category"
+            aria-labelledby="desserts-title"
+            data-menu-category="desserts"
+          >
+            <header class="category-heading">
+              <span class="category-index">/ 03</span>
+              <h3 id="desserts-title">Десерти</h3>
+              <p>Щось солодке до кави. Або просто так.</p>
+            </header>
+            <ul class="dish-list">
+              <li class="dish" data-dish="chocolate-tart" data-tags="хіт">
+                <article>
+                  <div class="dish-copy">
+                    <div class="dish-heading">
+                      <h4 id="dish-chocolate-tart">Шоколадний тарт</h4>
+                      <span class="dish-price">135 ₴</span>
+                    </div>
+                    <p class="dish-description">
+                      Хрусткий корж і густий темний шоколад.
+                    </p>
+                    <div class="dish-meta">
+                      <span class="dish-weight">120 г</span>
+                      <div class="dish-tags"><span>хіт</span></div>
+                    </div>
+                  </div>
+                  <div class="dish-image blur-up">
+                    <img
+                      class=""
+                      src="../../assets/cafe/menu/chocolate-tart.webp"
+                      alt="Темний шоколадний тарт на хрусткому коржі"
+                      width="400"
+                      height="600"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                  <button
+                    type="button"
+                    class="dish-open"
+                    aria-label="Докладніше: Шоколадний тарт, 135 ₴"
+                    aria-haspopup="dialog"
+                    data-title="Шоколадний тарт"
+                    data-description="Хрусткий корж і густий темний шоколад."
+                    data-ingredients="Пшеничне борошно, вершкове масло, темний шоколад, вершки, яйце. Містить глютен, яйця та молочні продукти."
+                    data-weight="120 г"
+                    data-price="135 ₴"
+                    data-illustration="false"
+                  >
+                    <span class="sr-only">Відкрити опис страви</span>
+                  </button>
+                </article>
+              </li>
+              <li class="dish" data-dish="cheesecake" data-tags="">
+                <article>
+                  <div class="dish-copy">
+                    <div class="dish-heading">
+                      <h4 id="dish-cheesecake">Чізкейк «Нью-Йорк»</h4>
+                      <span class="dish-price">135 ₴</span>
+                    </div>
+                    <p class="dish-description">Класичний, з ягідним соусом.</p>
+                    <div class="dish-meta">
+                      <span class="dish-weight">130 г</span>
+                      <div class="dish-tags"></div>
+                    </div>
+                  </div>
+                  <div class="dish-image blur-up">
+                    <img
+                      class=""
+                      src="../../assets/cafe/menu/cheesecake.webp"
+                      alt="Класичний чізкейк з рожевим ягідним соусом"
+                      width="450"
+                      height="600"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                  <button
+                    type="button"
+                    class="dish-open"
+                    aria-label="Докладніше: Чізкейк «Нью-Йорк», 135 ₴"
+                    aria-haspopup="dialog"
+                    data-title="Чізкейк «Нью-Йорк»"
+                    data-description="Класичний, з ягідним соусом."
+                    data-ingredients="Вершковий сир, вершки, яйця, пісочне печиво, вершкове масло, ягідний соус. Містить молочні продукти, яйця та глютен."
+                    data-weight="130 г"
+                    data-price="135 ₴"
+                    data-illustration="false"
+                  >
+                    <span class="sr-only">Відкрити опис страви</span>
+                  </button>
+                </article>
+              </li>
+              <li class="dish" data-dish="almond-croissant" data-tags="хіт">
+                <article>
+                  <div class="dish-copy">
+                    <div class="dish-heading">
+                      <h4 id="dish-almond-croissant">Мигдальний круасан</h4>
+                      <span class="dish-price">95 ₴</span>
+                    </div>
+                    <p class="dish-description">
+                      Масляний, з мигдальним кремом.
+                    </p>
+                    <div class="dish-meta">
+                      <span class="dish-weight">110 г</span>
+                      <div class="dish-tags"><span>хіт</span></div>
+                    </div>
+                  </div>
+                  <div class="dish-image blur-up">
+                    <img
+                      class=""
+                      src="../../assets/cafe/menu/almond-croissant.webp"
+                      alt="Мигдальний круасан із кремом і мигдальними пластівцями"
+                      width="429"
+                      height="600"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                  <button
+                    type="button"
+                    class="dish-open"
+                    aria-label="Докладніше: Мигдальний круасан, 95 ₴"
+                    aria-haspopup="dialog"
+                    data-title="Мигдальний круасан"
+                    data-description="Масляний, з мигдальним кремом."
+                    data-ingredients="Листкове дріжджове тісто, вершкове масло, мигдальний крем, мигдальні пластівці. Містить глютен, молочні продукти, яйця та горіхи."
+                    data-weight="110 г"
+                    data-price="95 ₴"
+                    data-illustration="false"
+                  >
+                    <span class="sr-only">Відкрити опис страви</span>
+                  </button>
+                </article>
+              </li>
+              <li class="dish" data-dish="macarons" data-tags="без глютену">
+                <article>
+                  <div class="dish-copy">
+                    <div class="dish-heading">
+                      <h4 id="dish-macarons">Макаронс (3 шт)</h4>
+                      <span class="dish-price">120 ₴</span>
+                    </div>
+                    <p class="dish-description">Мікс смаків.</p>
+                    <div class="dish-meta">
+                      <span class="dish-weight">45 г</span>
+                      <div class="dish-tags"><span>без глютену</span></div>
+                    </div>
+                  </div>
+                  <div class="dish-image blur-up">
+                    <img
+                      class=""
+                      src="../../assets/cafe/menu/macarons.webp"
+                      alt="Ніжні рожеві та кремові макаронс на блюді"
+                      width="600"
+                      height="400"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                  <button
+                    type="button"
+                    class="dish-open"
+                    aria-label="Докладніше: Макаронс (3 шт), 120 ₴"
+                    aria-haspopup="dialog"
+                    data-title="Макаронс (3 шт)"
+                    data-description="Мікс смаків."
+                    data-ingredients="Мигдальне борошно, яєчний білок, цукор, вершковий ганаш. Містить горіхи, яйця та молочні продукти."
+                    data-weight="45 г"
+                    data-price="120 ₴"
+                    data-illustration="false"
+                  >
+                    <span class="sr-only">Відкрити опис страви</span>
+                  </button>
+                </article>
+              </li>
+              <li class="dish" data-dish="apple-pie" data-tags="">
+                <article>
+                  <div class="dish-copy">
+                    <div class="dish-heading">
+                      <h4 id="dish-apple-pie">Домашній яблучний пиріг</h4>
+                      <span class="dish-price">110 ₴</span>
+                    </div>
+                    <p class="dish-description">
+                      З корицею і кулькою ванільного морозива.
+                    </p>
+                    <div class="dish-meta">
+                      <span class="dish-weight">150 г</span>
+                      <div class="dish-tags"></div>
+                    </div>
+                  </div>
+                  <div class="dish-image blur-up">
+                    <img
+                      class=""
+                      src="../../assets/cafe/menu/apple-pie.webp"
+                      alt="Шматочок домашнього яблучного пирога на тарілці"
+                      width="400"
+                      height="600"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                  <button
+                    type="button"
+                    class="dish-open"
+                    aria-label="Докладніше: Домашній яблучний пиріг, 110 ₴"
+                    aria-haspopup="dialog"
+                    data-title="Домашній яблучний пиріг"
+                    data-description="З корицею і кулькою ванільного морозива."
+                    data-ingredients="Яблука, пшеничне борошно, вершкове масло, яйце, кориця, ванільне морозиво. Містить глютен, яйця та молочні продукти."
+                    data-weight="150 г"
+                    data-price="110 ₴"
+                    data-illustration="false"
+                  >
+                    <span class="sr-only">Відкрити опис страви</span>
+                  </button>
+                </article>
+              </li>
+            </ul>
+          </section>
+          <section
+            id="dinner"
+            class="menu-category"
+            aria-labelledby="dinner-title"
+            data-menu-category="dinner"
+          >
+            <header class="category-heading">
+              <span class="category-index">/ 04</span>
+              <h3 id="dinner-title">Вечеря</h3>
+              <p>Теплі тарілки й розмови, які хочеться продовжити.</p>
+            </header>
+            <ul class="dish-list">
+              <li class="dish" data-dish="mushroom-pasta" data-tags="">
+                <article>
+                  <div class="dish-copy">
+                    <div class="dish-heading">
+                      <h4 id="dish-mushroom-pasta">
+                        Паста з грибами у вершковому соусі
+                      </h4>
+                      <span class="dish-price">235 ₴</span>
+                    </div>
+                    <p class="dish-description">
+                      Печериці, ніжні вершки та трохи пармезану.
+                    </p>
+                    <div class="dish-meta">
+                      <span class="dish-weight">320 г</span>
+                      <div class="dish-tags"></div>
+                    </div>
+                  </div>
+                  <div class="dish-image blur-up">
+                    <img
+                      class=""
+                      src="../../assets/cafe/menu/mushroom-pasta.webp"
+                      alt="Паста з грибами у світлому вершковому соусі"
+                      width="480"
+                      height="600"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                  <button
+                    type="button"
+                    class="dish-open"
+                    aria-label="Докладніше: Паста з грибами у вершковому соусі, 235 ₴"
+                    aria-haspopup="dialog"
+                    data-title="Паста з грибами у вершковому соусі"
+                    data-description="Печериці, ніжні вершки та трохи пармезану."
+                    data-ingredients="Пшенична паста, печериці, вершки, пармезан, цибуля, часник. Містить глютен та молочні продукти."
+                    data-weight="320 г"
+                    data-price="235 ₴"
+                    data-illustration="false"
+                  >
+                    <span class="sr-only">Відкрити опис страви</span>
+                  </button>
+                </article>
+              </li>
+              <li
+                class="dish"
+                data-dish="pumpkin-risotto"
+                data-tags="без глютену"
+              >
+                <article>
+                  <div class="dish-copy">
+                    <div class="dish-heading">
+                      <h4 id="dish-pumpkin-risotto">
+                        Різото з гарбузом та пармезаном
+                      </h4>
+                      <span class="dish-price">245 ₴</span>
+                    </div>
+                    <p class="dish-description">
+                      Кремовий рис, печений гарбуз і витриманий сир.
+                    </p>
+                    <div class="dish-meta">
+                      <span class="dish-weight">300 г</span>
+                      <div class="dish-tags"><span>без глютену</span></div>
+                    </div>
+                  </div>
+                  <div class="dish-image blur-up">
+                    <img
+                      class=""
+                      src="../../assets/cafe/menu/pumpkin-risotto.webp"
+                      alt="Editorial-ілюстрація різото з гарбузом і пармезаном"
+                      width="600"
+                      height="600"
+                      loading="lazy"
+                      decoding="async"
+                    /><span class="illustration-label">Ілюстрація</span>
+                  </div>
+                  <button
+                    type="button"
+                    class="dish-open"
+                    aria-label="Докладніше: Різото з гарбузом та пармезаном, 245 ₴"
+                    aria-haspopup="dialog"
+                    data-title="Різото з гарбузом та пармезаном"
+                    data-description="Кремовий рис, печений гарбуз і витриманий сир."
+                    data-ingredients="Рис арборіо, гарбуз, овочевий бульйон, пармезан, вершкове масло, цибуля. Містить молочні продукти."
+                    data-weight="300 г"
+                    data-price="245 ₴"
+                    data-illustration="true"
+                  >
+                    <span class="sr-only">Відкрити опис страви</span>
+                  </button>
+                </article>
+              </li>
+              <li
+                class="dish"
+                data-dish="sous-vide-chicken"
+                data-tags="без глютену"
+              >
+                <article>
+                  <div class="dish-copy">
+                    <div class="dish-heading">
+                      <h4 id="dish-sous-vide-chicken">
+                        Курка су-від з картопляним пюре
+                      </h4>
+                      <span class="dish-price">295 ₴</span>
+                    </div>
+                    <p class="dish-description">
+                      Соковите філе, шовковисте пюре та легкий соус.
+                    </p>
+                    <div class="dish-meta">
+                      <span class="dish-weight">340 г</span>
+                      <div class="dish-tags"><span>без глютену</span></div>
+                    </div>
+                  </div>
+                  <div class="dish-image blur-up">
+                    <img
+                      class=""
+                      src="../../assets/cafe/menu/sous-vide-chicken.webp"
+                      alt="Editorial-ілюстрація курки су-від з картопляним пюре"
+                      width="600"
+                      height="600"
+                      loading="lazy"
+                      decoding="async"
+                    /><span class="illustration-label">Ілюстрація</span>
+                  </div>
+                  <button
+                    type="button"
+                    class="dish-open"
+                    aria-label="Докладніше: Курка су-від з картопляним пюре, 295 ₴"
+                    aria-haspopup="dialog"
+                    data-title="Курка су-від з картопляним пюре"
+                    data-description="Соковите філе, шовковисте пюре та легкий соус."
+                    data-ingredients="Куряче філе, картопля, молоко, вершкове масло, курячий бульйон, зелень. Містить молочні продукти."
+                    data-weight="340 г"
+                    data-price="295 ₴"
+                    data-illustration="true"
+                  >
+                    <span class="sr-only">Відкрити опис страви</span>
+                  </button>
+                </article>
+              </li>
+              <li class="dish" data-dish="beet-salad" data-tags="без глютену">
+                <article>
+                  <div class="dish-copy">
+                    <div class="dish-heading">
+                      <h4 id="dish-beet-salad">
+                        Салат з печеним буряком і козячим сиром
+                      </h4>
+                      <span class="dish-price">195 ₴</span>
+                    </div>
+                    <p class="dish-description">
+                      Солодкий буряк, ніжний сир і свіжа зелень.
+                    </p>
+                    <div class="dish-meta">
+                      <span class="dish-weight">220 г</span>
+                      <div class="dish-tags"><span>без глютену</span></div>
+                    </div>
+                  </div>
+                  <div class="dish-image blur-up">
+                    <img
+                      class=""
+                      src="../../assets/cafe/menu/beet-salad.webp"
+                      alt="Editorial-ілюстрація салату з печеним буряком і козячим сиром"
+                      width="600"
+                      height="600"
+                      loading="lazy"
+                      decoding="async"
+                    /><span class="illustration-label">Ілюстрація</span>
+                  </div>
+                  <button
+                    type="button"
+                    class="dish-open"
+                    aria-label="Докладніше: Салат з печеним буряком і козячим сиром, 195 ₴"
+                    aria-haspopup="dialog"
+                    data-title="Салат з печеним буряком і козячим сиром"
+                    data-description="Солодкий буряк, ніжний сир і свіжа зелень."
+                    data-ingredients="Печений буряк, козячий сир, рукола, волоські горіхи, оливкова олія. Містить молочні продукти та горіхи."
+                    data-weight="220 г"
+                    data-price="195 ₴"
+                    data-illustration="true"
+                  >
+                    <span class="sr-only">Відкрити опис страви</span>
+                  </button>
+                </article>
+              </li>
+              <li
+                class="dish"
+                data-dish="grilled-salmon"
+                data-tags="без глютену"
+              >
+                <article>
+                  <div class="dish-copy">
+                    <div class="dish-heading">
+                      <h4 id="dish-grilled-salmon">
+                        Лосось на грилі з овочами
+                      </h4>
+                      <span class="dish-price">325 ₴</span>
+                    </div>
+                    <p class="dish-description">
+                      Ніжне філе, сезонні овочі та часточка лимона.
+                    </p>
+                    <div class="dish-meta">
+                      <span class="dish-weight">300 г</span>
+                      <div class="dish-tags"><span>без глютену</span></div>
+                    </div>
+                  </div>
+                  <div class="dish-image blur-up">
+                    <img
+                      class=""
+                      src="../../assets/cafe/menu/grilled-salmon.webp"
+                      alt="Лосось із гриль-смугами, овочами та соусом"
+                      width="400"
+                      height="600"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                  <button
+                    type="button"
+                    class="dish-open"
+                    aria-label="Докладніше: Лосось на грилі з овочами, 325 ₴"
+                    aria-haspopup="dialog"
+                    data-title="Лосось на грилі з овочами"
+                    data-description="Ніжне філе, сезонні овочі та часточка лимона."
+                    data-ingredients="Філе лосося, кабачок, солодкий перець, морква, лимон, оливкова олія. Містить рибу."
+                    data-weight="300 г"
+                    data-price="325 ₴"
+                    data-illustration="false"
+                  >
+                    <span class="sr-only">Відкрити опис страви</span>
+                  </button>
+                </article>
+              </li>
+            </ul>
+          </section>
+        </div>
+        <div class="menu-note wrap">
+          <p>
+            Усі назви, рецепти та ціни — демонстраційні. Фото ілюстративні;
+            векторні заміни позначено.
+          </p>
+          <p>
+            Позначки описують склад демо-рецептів. Відсутність слідів алергенів
+            не гарантується.
+          </p>
+        </div>
+      </section>
+      <div class="qr-bottom wrap">
+        <p>Сподобалося щось у меню?</p>
+        <a class="quiet-link" href="../#contact"
+          >Обрати час для візиту <span aria-hidden="true">↗</span></a
         >
-          Сніданки</button
-        ><button
-          role="tab"
-          id="tab-2"
-          aria-selected="false"
-          aria-controls="panel-2"
-          tabindex="-1"
-          data-category="Десерти"
-        >
-          Десерти</button
-        ><button
-          role="tab"
-          id="tab-3"
-          aria-selected="false"
-          aria-controls="panel-3"
-          tabindex="-1"
-          data-category="Вечеря"
-        >
-          Вечеря
-        </button>
+        <p class="demo-note">
+          Контакти — плейсхолдери: +380000000000 · @lume_demo
+        </p>
       </div>
-      <div
-        class="menu-panel"
-        id="panel-0"
-        role="tabpanel"
-        aria-labelledby="tab-0"
-      >
-        <article class="dish" data-search="еспресо щільний смак, ноти шоколаду">
-          <img
-            class=""
-            src="../../assets/photos/espresso.webp"
-            width="667"
-            height="1000"
-            alt="Еспресо"
-            loading="lazy"
-            decoding="async"
-          />
-          <div>
-            <div class="dish-title">
-              <h2>Еспресо</h2>
-              <strong>65 ₴</strong>
-            </div>
-            <p>Щільний смак, ноти шоколаду</p>
-          </div>
-        </article>
-        <article
-          class="dish"
-          data-search="капучино подвійний еспресо, ніжне молоко"
-        >
-          <img
-            class=""
-            src="../../assets/photos/latte.webp"
-            width="667"
-            height="1000"
-            alt="Капучино"
-            loading="lazy"
-            decoding="async"
-          />
-          <div>
-            <div class="dish-title">
-              <h2>Капучино</h2>
-              <strong>90 ₴</strong>
-            </div>
-            <p>Подвійний еспресо, ніжне молоко</p>
-          </div>
-        </article>
-      </div>
-      <div
-        class="menu-panel"
-        id="panel-1"
-        role="tabpanel"
-        aria-labelledby="tab-1"
-        hidden
-      >
-        <article
-          class="dish"
-          data-search="французький тост банан, ягоди, вершковий крем"
-        >
-          <img
-            class=""
-            src="../../assets/photos/toast.webp"
-            width="928"
-            height="1200"
-            alt="Французький тост"
-            loading="lazy"
-            decoding="async"
-          />
-          <div>
-            <div class="dish-title">
-              <h2>Французький тост</h2>
-              <strong>220 ₴</strong>
-            </div>
-            <p>Банан, ягоди, вершковий крем</p>
-          </div>
-        </article>
-        <article
-          class="dish"
-          data-search="панкейки ягоди, крем, кленовий сироп"
-        >
-          <img
-            class=""
-            src="../../assets/photos/pancakes.webp"
-            width="1200"
-            height="800"
-            alt="Панкейки"
-            loading="lazy"
-            decoding="async"
-          />
-          <div>
-            <div class="dish-title">
-              <h2>Панкейки</h2>
-              <strong>210 ₴</strong>
-            </div>
-            <p>Ягоди, крем, кленовий сироп</p>
-          </div>
-        </article>
-      </div>
-      <div
-        class="menu-panel"
-        id="panel-2"
-        role="tabpanel"
-        aria-labelledby="tab-2"
-        hidden
-      >
-        <article class="dish" data-search="чизкейк вершковий сир, ягідний соус">
-          <img
-            class=""
-            src="../../assets/photos/cake.webp"
-            width="1200"
-            height="800"
-            alt="Чизкейк"
-            loading="lazy"
-            decoding="async"
-          />
-          <div>
-            <div class="dish-title">
-              <h2>Чизкейк</h2>
-              <strong>155 ₴</strong>
-            </div>
-            <p>Вершковий сир, ягідний соус</p>
-          </div>
-        </article>
-        <article
-          class="dish"
-          data-search="морозиво ваніль, карамель, хрустка вафля"
-        >
-          <img
-            class=""
-            src="../../assets/photos/donut.webp"
-            width="960"
-            height="1200"
-            alt="Морозиво"
-            loading="lazy"
-            decoding="async"
-          />
-          <div>
-            <div class="dish-title">
-              <h2>Морозиво</h2>
-              <strong>85 ₴</strong>
-            </div>
-            <p>Ваніль, карамель, хрустка вафля</p>
-          </div>
-        </article>
-      </div>
-      <div
-        class="menu-panel"
-        id="panel-3"
-        role="tabpanel"
-        aria-labelledby="tab-3"
-        hidden
-      >
-        <article
-          class="dish"
-          data-search="паста з песто базилік, пармезан, оливкова олія"
-        >
-          <img
-            class=""
-            src="../../assets/photos/pasta.webp"
-            width="1200"
-            height="801"
-            alt="Паста з песто"
-            loading="lazy"
-            decoding="async"
-          />
-          <div>
-            <div class="dish-title">
-              <h2>Паста з песто</h2>
-              <strong>285 ₴</strong>
-            </div>
-            <p>Базилік, пармезан, оливкова олія</p>
-          </div>
-        </article>
-        <article
-          class="dish"
-          data-search="зелений салат хрустке листя, овочі, цитрусовий соус"
-        >
-          <img
-            class=""
-            src="../../assets/photos/salad.webp"
-            width="1200"
-            height="800"
-            alt="Зелений салат"
-            loading="lazy"
-            decoding="async"
-          />
-          <div>
-            <div class="dish-title">
-              <h2>Зелений салат</h2>
-              <strong>235 ₴</strong>
-            </div>
-            <p>Хрустке листя, овочі, цитрусовий соус</p>
-          </div>
-        </article>
-      </div>
-      <p class="no-results" hidden>Нічого не знайшли. Спробуйте іншу назву.</p>
-      <p class="disclaimer">Ціни та страви наведені для демонстрації.</p>
     </main>
-    <footer>
-      <a href="../../">Концепт від Es1xx ↗</a><span>Демо-приклад</span
-      ><span>Контакти — плейсхолдери</span>
+    <footer class="site-footer wrap">
+      <a class="footer-wordmark" href="../">Lume<span>.</span></a>
+      <div>
+        <a class="concept-link" href="../../"
+          >Концепт від Es1xx <span aria-hidden="true">↗</span></a
+        >
+        <p>Демо-приклад</p>
+      </div>
+      <p>Контакти — плейсхолдери.<br />Заклад, адреса та відгуки вигадані.</p>
     </footer>
+    <dialog id="dish-dialog" aria-labelledby="dialog-title">
+      <div class="dialog-shell">
+        <button
+          type="button"
+          class="dialog-close"
+          aria-label="Закрити опис страви"
+          autofocus
+        >
+          <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+            <path
+              d="m5 5 14 14M19 5 5 19"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+            />
+          </svg>
+        </button>
+        <div class="dialog-media">
+          <img id="dialog-image" width="600" height="600" alt="" /><span
+            class="swipe-hint"
+            >Проведіть вниз, щоб закрити</span
+          >
+        </div>
+        <div class="dialog-copy">
+          <p class="eyebrow" id="dialog-kind">З меню Lume</p>
+          <h2 id="dialog-title"></h2>
+          <p id="dialog-description"></p>
+          <div class="dialog-details">
+            <span id="dialog-weight"></span><strong id="dialog-price"></strong>
+          </div>
+          <h3>Що всередині</h3>
+          <p id="dialog-ingredients"></p>
+          <p class="dialog-demo">
+            Демонстраційна страва. Рецепт і зображення ілюстративні.
+          </p>
+          <button type="button" class="dialog-back">
+            Повернутися до меню <span aria-hidden="true">↗</span>
+          </button>
+        </div>
+      </div>
+    </dialog>
   </body>
 </html>
